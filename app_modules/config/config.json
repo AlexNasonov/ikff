@@ -1,0 +1,13 @@
+{
+  "host": "localhost",
+  "port": 3000,
+  "database" : {
+    "name": "d6dhsk42f6t72d",
+    "username":"zprxnqygyydsyx",
+    "password":"m8t-ky6TTnN92ibtf5hEPC-j6M",
+    "host":"ec2-54-247-174-238.eu-west-1.compute.amazonaws.com"
+  },
+  "dbport": 5432,
+  "dialect": "postgres",
+  "locales": ["ru", "en"]
+}
