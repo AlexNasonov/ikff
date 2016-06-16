@@ -1,22 +1,44 @@
 @font-face {
-    font-family: 'Circe-Light';
-    src:    url('/fonts/circe-light/Circe-Light.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/circe-light/Circe-Light.woff') format('woff'),
-            url('/fonts/circe-light/Circe-Light.ttf')  format('truetype'),
-            url('/fonts/circe-light/Circe-Light.svg#Circe-Light') format('svg');
+    font-family: 'FuturaNew';
+    src:    url('/fonts/futura/FuturaNewBook-Reg.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/futura/FuturaNewBook-Reg.otf')  format('opentype'),
+            url('/fonts/futura/FuturaNewBook-Reg.woff') format('woff'),
+            url('/fonts/futura/FuturaNewBook-Reg.ttf')  format('truetype'),
+            url('/fonts/futura/FuturaNewBook-Reg.svg#FuturaNewBook-Reg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Circe-Bold';
-    src:    url('/fonts/circe-bold/Circe-Bold.eot?#iefix') format('embedded-opentype'),
-            url('/fonts/circe-bold/Circe-Bold.woff') format('woff'),
-            url('/fonts/circe-bold/Circe-Bold.ttf')  format('truetype'),
-            url('/fonts/circe-bold/Circe-Bold.svg#Circe-Bold') format('svg');
+    font-family: 'PFMediumItalic';
+    src:    url('/fonts/pfmedit/PFDinTextCompPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/pfmedit/PFDinTextCompPro-MediumItalic.woff') format('woff'),
+            url('/fonts/pfmedit/PFDinTextCompPro-MediumItalic.ttf')  format('truetype'),
+            url('/fonts/pfmedit/PFDinTextCompPro-MediumItalic.svg#PFDinTextCompPro-MediumItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'PFRegular';
+    src:    url('/fonts/pfreg/PFDinTextCompPro-Regular.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/pfreg/PFDinTextCompPro-Regular.woff') format('woff'),
+            url('/fonts/pfreg/PFDinTextCompPro-Regular.ttf')  format('truetype'),
+            url('/fonts/pfreg/PFDinTextCompPro-Regular.svg#PFDinTextCompPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PFItalic';
+    src:    url('/fonts/pfit/PFDinTextCompPro-Italic.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/pfit/PFDinTextCompPro-Italic.woff') format('woff'),
+            url('/fonts/pfit/PFDinTextCompPro-Italic.ttf')  format('truetype'),
+            url('/fonts/pfit/PFDinTextCompPro-Italic.svg#PFDinTextCompPro-Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 @font-face {
     font-family: 'Material Icons';
@@ -44,57 +66,37 @@ body {
 }
 
 body, p, ul, span {
-    font-family: 'PT Sans Narrow', 'Arial Narrow', sans-serif;
+    font-family: 'PFRegular','Arial Narrow', sans-serif;
+    font-size: 18px;
 }
 
 p, ul, span {
     text-align: justify;
 }
 
-h1, h2, h3 {
-    font-family: 'Circe-Light', Helvetica, Arial, sans-serif;
+h1, h2, h3, .stat {
+    font-family: 'FuturaNew', Helvetica, Arial, sans-serif;
     font-weight: normal;
     text-transform: uppercase;
 }
 
-paper-button, h4, h5, h6, .exo {
-    font-family: 'Exo 2', 'Roboto Mono', monospace;
+paper-button, h4, h5, h6, .accent {
+    font-family: 'PFMediumItalic', 'Arial Narrow', sans-serif;
     font-weight: 300;
     text-transform: uppercase;
 }
 li {
     position: relative;
     list-style: none;
+    margin: 0.2em 0;
 }
 
 li:before {
-    content: "\e224";
+    content: "\e049";
     font-family: Glyphicons, serif;
     font-style: normal;
     position: absolute;
-    left:-1.2em;
-    top: 0;
+    left:-1.5em;
+    top: -0.1em;
 }
 
-.stat {
-    font-size: 2em;
-}
-
-.accent {
-    font-family: 'Circe-Bold', Helvetica, Arial, sans-serif;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    text-align: center;
-}
-.square{
-    position: relative;
-    width: 50%;		/* desired width */
-}
-.square:before{
-    content: "";
-    display: block;
-    padding-top: 100%; 	/* initial ratio of 1:1*/
-}
-.text-center {
-    text-align: center;
-}

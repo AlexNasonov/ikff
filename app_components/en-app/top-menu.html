@@ -1,0 +1,131 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="top-menu">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .logo {
+                text-align: right;
+                padding: 2em;
+            }
+            .logo-image {
+                width: 250px;
+            }
+            .menu-content {
+                padding: 0 2em;
+            }
+            .menu-group {
+                margin: 1.5em 0;
+            }
+            .heading {
+                font-family: 'PFMediumItalic', 'Arial Narrow', monospace;
+                text-transform: uppercase;
+                font-size: 2em;
+                display: block;
+                color: var(--paper-orange-800);
+            }
+            paper-button {
+
+            }
+
+            @media (max-width: 1024px) {
+
+            }
+            @media (max-width: 400px) {
+                .logo-image {
+                    width: 100%;
+                }
+            }
+        </style>
+        <div class="logo">
+            <object class="logo-image" type="image/svg+xml" data="/images/fest_logo_c.svg"></object>
+        </div>
+
+        <div class="menu-content">
+            <div class="menu-group">
+                <span class="heading">About</span>
+                <template is="dom-repeat" items="{{menuAbout}}">
+                    <paper-button>{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">Festival</span>
+                <template is="dom-repeat" items="{{menuFestival}}">
+                    <paper-button>{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">Travel</span>
+                <template is="dom-repeat" items="{{menuTravel}}">
+                    <paper-button>{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">More</span>
+                <template is="dom-repeat" items="{{menuMore}}">
+                    <paper-button>{{item.name}}</paper-button>
+                </template>
+            </div>
+        </div>
+
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "top-menu",
+            properties: {
+                menuAbout: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "About  Festival", url: ""},
+                            {name: "Organizers", url: ""},
+                            {name: "Participating Countries", url: ""},
+                            {name: "Information support", url: ""},
+                            {name: "Partners", url: ""}
+                        ]
+                    }
+                },
+                menuFestival: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Festival Events", url: ""},
+                            {name: "Festival Ground", url: ""},
+                            {name: "Festival Program", url: ""}
+                        ]
+                    }
+                },
+                menuTravel: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "How to get to Festival?", url: ""},
+                            {name: "Where to live?", url: ""},
+                            {name: "Escorted tours", url: ""}
+                        ]
+                    }
+                },
+                menuMore: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "IKFF 2015", url: ""},
+                            {name: "Contacts", url: ""}
+                        ]
+                    }
+                }
+            }
+        })
+    </script>
+</dom-module>

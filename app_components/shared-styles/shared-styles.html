@@ -1,0 +1,43 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-styles/color.html">
+<link rel="import" href="/bower_components/paper-styles/shadow.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="shared-styles">
+    <template>
+        <style include="iron-flex iron-flex-alignment iron-flex-factors">
+
+            .h-container, .h-small-container {
+                @apply(--layout-horizontal);
+            }
+            .v-container {
+                @apply(--layout-vertical);
+            }
+
+            .stat {
+                font-size: 5em;
+            }
+
+            .accent {
+                font-size: 1.5em;
+            }
+            .square{
+                position: relative;
+                width: 50%;		/* desired width */
+            }
+            .square:before{
+                content: "";
+                display: block;
+                padding-top: 100%; 	/* initial ratio of 1:1*/
+            }
+
+            @media (max-width: 1024px) {
+                .h-container {
+                    @apply(--layout-vertical);
+                }
+            }
+        </style>
+    </template>
+
+</dom-module>

@@ -1,0 +1,104 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-about">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            paper-card {
+                -margin: 0 1em;
+            }
+            .promo {
+                background-image: url("/images/crocus.jpg");
+                background-size: cover;
+                background-position: center center;
+                height:25em;
+            }
+            .promo-content {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#320a32+0,000000+100&1+0,0+100 */
+                background: -moz-linear-gradient(left,  rgba(50,10,50,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(50,10,50,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(50,10,50,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#320a32', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+                width: 60%;
+                color: #ffffff;
+                height: 100%;
+            }
+            .promo-content >div {
+                padding: 2em 0 0 2em;
+            }
+            .infographic {
+                background-color: var(--paper-deep-purple-500);
+            }
+            .infographic .card-content {
+                text-align: center;
+
+            }
+
+            .infographic iron-icon {
+                height: 7em;
+                width: 7em;
+            }
+            @media (max-width: 1024px) {
+
+            }
+        </style>
+
+        <section class="h-container">
+            <div class="promo flex">
+                <div class="promo-content">
+                    <div>
+                        <h1>VI International Cultural Kung-Fu Festival</h1>
+                        <p class="accent">21-26 July, Moscow 2016</p>
+                        <p>Aquarium Sports Arena, Crocus City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex infographic h-container">
+                <paper-card class="flex">
+                    <div class="card-content">
+                        <iron-icon icon="language"></iron-icon>
+                        <div class="stat">15</div>
+                        <div>participating countries</div>
+                    </div>
+                </paper-card>
+                <paper-card class="flex">
+                    <div class="card-content">
+                        <iron-icon icon="face"></iron-icon>
+                        <div class="stat">1000</div>
+                        <div>active participants and sportsmen</div>
+                    </div>
+                </paper-card>
+                <paper-card class="flex">
+                    <div class="card-content">
+                        <iron-icon icon="accessibility"></iron-icon>
+                        <div class="stat">35</div>
+                        <div>kung-fu styles</div>
+                    </div>
+                </paper-card>
+                <paper-card class="flex">
+                    <div class="card-content">
+                        <iron-icon icon="thumbs-up-down"></iron-icon>
+                        <div class="stat">100</div>
+                        <div>full-contact combats</div>
+                    </div>
+                </paper-card>
+            </div>
+
+                       
+        </section>
+
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-about"
+        })
+    </script>
+</dom-module>
