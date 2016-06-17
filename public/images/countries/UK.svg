@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 960 560" style="enable-background:new 0 0 960 560;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st1{clip-path:url(#SVGID_2_);fill:#BD1F38;}
+	.st2{clip-path:url(#SVGID_2_);fill:#2C3077;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="0" width="960" height="560"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect x="0" class="st0" width="960" height="560"/>
+		<polygon class="st1" points="642.8,202.5 960,24.9 960,0 938.1,0 576.4,202.5 		"/>
+		<polygon class="st1" points="627.8,368.8 960,554.7 960,517.5 694.2,368.8 		"/>
+		<polygon class="st1" points="0,42.7 284.2,202.5 350.6,202.5 0,5.4 		"/>
+		<polygon class="st1" points="335.5,368.8 0,556.8 0,560 60.6,560 401.9,368.8 		"/>
+		<polygon class="st2" points="894.3,0 558.2,0 558.2,188.3 		"/>
+		<polygon class="st2" points="409.8,0 75,0 409.8,188.3 		"/>
+		<polygon class="st2" points="960,202.5 960,74 732,202.5 		"/>
+		<polygon class="st2" points="960,495.9 960,368.8 732,368.8 		"/>
+		<polygon class="st2" points="94,560 409.8,560 409.8,383 		"/>
+		<polygon class="st2" points="558.2,560 875,560 558.2,383 		"/>
+		<polygon class="st2" points="0,368.8 0,501.6 236,368.8 		"/>
+		<polygon class="st2" points="0,202.5 236,202.5 0,69.5 		"/>
+		<polygon class="st1" points="439.4,0 439.4,235.8 0,235.8 0,335.5 439.4,335.5 439.4,560 528.5,560 528.5,335.5 960,335.5 
+			960,235.8 528.5,235.8 528.5,0 		"/>
+	</g>
+</g>
+</svg>

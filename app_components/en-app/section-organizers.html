@@ -1,0 +1,116 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-organizers">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+                background-color: var(--paper-amber-500);
+                padding: 2em;
+            }
+            .logo{
+                height: 4em;
+                margin-bottom: 1em;
+            }
+            .ava-1, .ava-2 {
+                background-size: cover;
+                width: 100%;
+                border-radius: 50%;
+            }
+            .ava-1 {
+                background-image: url("/images/organizers/fubiao.jpg");
+            }
+            .ava-2 {
+                background-image: url("/images/organizers/kamil.jpg");
+            }
+            .message, .h-container >div {
+                padding: 1em;
+            }
+            .signature {
+                font-family: 'PFMediumItalic', 'Arial Narrow', sans-serif;
+                text-align: right;
+            }
+            @media (max-width: 1024px) {
+
+            }
+        </style>
+
+        <section>
+            <h1>Organizers</h1>
+            <div class="h-container">
+                <div class="flex">
+                    <div>
+                        <img class="logo" src="/images/organizers/ikff.svg">
+                    </div>
+                    <div class="h-small-container">
+                        <div class="flex">
+                            <div class="ava-1 square"></div>
+                        </div>
+                        <div class="flex-2 message">
+                            <p>
+                                Pellentesque velit risus, fermentum ac magna ut, lobortis pharetra nisl. Donec metus erat,
+                                suscipit laoreet mi eu, laoreet pharetra elit. Ut suscipit ligula id ligula iaculis, vel
+                                tempus neque pulvinar. Donec condimentum aliquam velit, at molestie purus tincidunt non.
+                                Nulla ultricies et ex congue pellentesque. Mauris ullamcorper, lacus nec sodales sagittis,
+                                nunc diam sodales quam, vitae cursus massa turpis eu turpis. Aliquam venenatis quam et
+                                cursus sollicitudin. In porttitor metus lorem, ac mollis justo cursus ac. Maecenas
+                                efficitur molestie massa eu congue. Donec placerat mi vitae felis iaculis, nec pellentesque
+                                tortor faucibus. Nulla massa sem, semper sit amet commodo sollicitudin, lacinia sit amet
+                                lacus. Aenean arcu massa, facilisis eget porta eu, posuere eget nulla. Curabitur pretium
+                                mauris tristique eros volutpat scelerisque. Nam mi enim, fermentum eget tortor in, accumsan
+                                egestas diam.
+                            </p>
+                            <p class="signature">
+                                President of International Kung-Fu Federation
+                                <br>Fu Biao
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <img class="logo" src="/images/organizers/fkfr.svg">
+                    </div>
+                    <div class="h-small-container">
+                        <div class="flex">
+                            <div class="ava-2 square"></div>
+                        </div>
+                        <div class="flex-2 message">
+                            <p>
+                                Pellentesque velit risus, fermentum ac magna ut, lobortis pharetra nisl. Donec metus erat,
+                                suscipit laoreet mi eu, laoreet pharetra elit. Ut suscipit ligula id ligula iaculis, vel
+                                tempus neque pulvinar. Donec condimentum aliquam velit, at molestie purus tincidunt non.
+                                Nulla ultricies et ex congue pellentesque. Mauris ullamcorper, lacus nec sodales sagittis,
+                                nunc diam sodales quam, vitae cursus massa turpis eu turpis. Aliquam venenatis quam et
+                                cursus sollicitudin. In porttitor metus lorem, ac mollis justo cursus ac. Maecenas
+                                efficitur molestie massa eu congue. Donec placerat mi vitae felis iaculis, nec pellentesque
+                                tortor faucibus. Nulla massa sem, semper sit amet commodo sollicitudin, lacinia sit amet
+                                lacus. Aenean arcu massa, facilisis eget porta eu, posuere eget nulla. Curabitur pretium
+                                mauris tristique eros volutpat scelerisque. Nam mi enim, fermentum eget tortor in, accumsan
+                                egestas diam.
+                            </p>
+                            <p class="signature">
+                                President of Kung-Fu Federation of Russia
+                                <br>Kamil Rabadanov
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-organizers"
+        })
+    </script>
+</dom-module>

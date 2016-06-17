@@ -10,10 +10,23 @@
     <template>
         <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
             paper-card {
-                -margin: 0 1em;
+                color: #ffffff;
+                @apply(--shadow-none);
+            }
+            paper-card:first-child {
+                background-color: var(--paper-red-500);
+            }
+            paper-card:nth-child(2) {
+                background-color: var(--paper-red-600);
+            }
+            paper-card:nth-child(3) {
+                background-color: var(--paper-red-700);
+            }
+            paper-card:nth-child(4){
+                background-color: var(--paper-red-800);
             }
             .promo {
-                background-image: url("/images/crocus.jpg");
+                background-image: url("/images/about/crocus.jpg");
                 background-size: cover;
                 background-position: center center;
                 height:25em;
@@ -42,6 +55,7 @@
             .infographic iron-icon {
                 height: 7em;
                 width: 7em;
+                color: var(--paper-amber-500);
             }
             @media (max-width: 1024px) {
 
@@ -59,28 +73,28 @@
                 </div>
             </div>
             <div class="flex infographic h-container">
-                <paper-card class="flex">
+                <paper-card class="flex" image="/images/about/opening.jpg">
                     <div class="card-content">
                         <iron-icon icon="language"></iron-icon>
                         <div class="stat">15</div>
                         <div>participating countries</div>
                     </div>
                 </paper-card>
-                <paper-card class="flex">
+                <paper-card class="flex" image="/images/about/fighters.jpg">
                     <div class="card-content">
                         <iron-icon icon="face"></iron-icon>
                         <div class="stat">1000</div>
                         <div>active participants and sportsmen</div>
                     </div>
                 </paper-card>
-                <paper-card class="flex">
+                <paper-card class="flex" image="/images/about/styles.jpg">
                     <div class="card-content">
                         <iron-icon icon="accessibility"></iron-icon>
                         <div class="stat">35</div>
                         <div>kung-fu styles</div>
                     </div>
                 </paper-card>
-                <paper-card class="flex">
+                <paper-card class="flex" image="/images/about/combat.jpg">
                     <div class="card-content">
                         <iron-icon icon="thumbs-up-down"></iron-icon>
                         <div class="stat">100</div>

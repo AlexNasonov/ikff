@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 960 560" style="enable-background:new 0 0 960 560;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);fill:#D81E34;}
+	.st1{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+	.st2{clip-path:url(#SVGID_2_);fill:#313F99;}
+	.st3{clip-path:url(#SVGID_2_);}
+	.st4{clip-path:url(#SVGID_4_);fill:#F5D02C;}
+</style>
+<g>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" width="960" height="560"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect class="st0" width="960" height="40"/>
+		<rect y="40" class="st1" width="960" height="40"/>
+		<rect y="80" class="st0" width="960" height="40"/>
+		<rect y="120" class="st1" width="960" height="40"/>
+		<rect y="160" class="st0" width="960" height="40"/>
+		<rect y="200" class="st1" width="960" height="40"/>
+		<rect y="240" class="st0" width="960" height="40"/>
+		<rect y="280" class="st1" width="960" height="40"/>
+		<rect y="320" class="st0" width="960" height="40"/>
+		<rect y="360" class="st1" width="960" height="40"/>
+		<rect y="400" class="st0" width="960" height="40"/>
+		<rect y="440" class="st1" width="960" height="40"/>
+		<rect y="480" class="st0" width="960" height="40"/>
+		<rect y="520" class="st1" width="960" height="40"/>
+		<rect class="st2" width="560" height="320"/>
+		<g class="st3">
+			<defs>
+				<rect id="SVGID_3_" width="960" height="560"/>
+			</defs>
+			<clipPath id="SVGID_4_">
+				<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+			</clipPath>
+			<path class="st4" d="M150,160c0-58,47-105,105-105c20.1,0,38.9,5.7,54.9,15.5C288.6,51.5,260.7,40,230,40
+				c-66.2,0-120,53.8-120,120c0,66.2,53.8,120,120,120c30.7,0,58.7-11.5,79.9-30.5c-16,9.8-34.8,15.5-54.9,15.5
+				C197,265,150,218,150,160"/>
+			<polygon class="st4" points="390,160 447.5,137.7 386,142.6 428.2,97.7 374.9,128.7 393.4,69.9 358.9,121 350,60 343.6,103.7 
+				341.8,116.3 341.1,121 306.6,69.9 325,128.7 271.8,97.7 313.9,142.6 252.5,137.7 310,160 252.5,182.3 313.9,177.4 271.8,222.4 
+				325,191.3 306.6,250.1 341.1,199 341.8,203.7 343.6,216.3 350,260 358.9,199 393.4,250.1 374.9,191.3 428.2,222.4 386,177.4 
+				447.5,182.3 			"/>
+		</g>
+	</g>
+</g>
+</svg>
