@@ -20,6 +20,7 @@
     "paper-listbox": "polymerelements/paper-listbox#*",
     "paper-item": "PolymerElements/paper-item#*",
     "paper-spinner": "PolymerElements/paper-spinner#*",
-    "neon-animation": "PolymerElements/neon-animation#*"
+    "neon-animation": "PolymerElements/neon-animation#*",
+    "SimpleSlider": "^0.6.1"
   }
 }

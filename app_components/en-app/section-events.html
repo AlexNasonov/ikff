@@ -1,0 +1,135 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<script src="/bower_components/SimpleSlider/dist/simpleslider.min.js"></script>
+
+<dom-module id="section-events">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+                padding: 2em;
+                background-color: var(--paper-amber-500);
+            }
+            .block {
+                padding:0 2em 0 0;
+            }
+            .slider {
+                width:100%;
+                height:20em;
+            }
+            .slide, .banner {
+                width: 100%;
+                height:100%;
+                background-size: cover;
+                background-position: center center;
+            }
+            paper-card{
+                width:100%;
+                min-height: 20em;
+                background-image: url(/images/events/fn_banner.jpg);
+                background-size: cover;
+                background-position: top center;
+            }
+            .banner {
+                min-height: inherit;
+
+            }
+
+
+            @media (max-width: 1024px) {
+                .block {
+                    padding:0;
+                }
+            }
+        </style>
+        <section>
+            <h1>Festival Events</h1>
+
+            <div class="h-container">
+                <div class="block flex-2">
+
+
+                    <div id="festSlider" class="slider">
+                        <div class="slide" style="background-image: url(/images/events/fest/001.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/fest/002.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/fest/003.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/fest/004.jpg);"></div>
+                    </div>
+
+                    <h2>
+                        IV International Cultural Kung-Fu Festival
+                    </h2>
+
+                    <ul>
+                        <li>Live exhibitions of kung-fu masters, demonstrations of combat systems and
+                            traditional kung-fu styles</li>
+                        <li>Art-exhibition of Chinese painting in the traditional style Guóhuà</li>
+                        <li>Calligraphy and painting Guóhuà Workshops</li>
+                        <li>Kung-Fu cinema-marathon of films and animation movies</li>
+                    </ul>
+                </div>
+
+                <div class="block flex-2">
+
+                    <div id="champSlider" class="slider">
+                        <div class="slide" style="background-image: url(/images/events/champ/001.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/champ/002.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/champ/003.jpg);"></div>
+                        <div class="slide" style="background-image: url(/images/events/champ/004.jpg);"></div>
+                    </div>
+
+                    <h2>
+                        V  International  Kung-Fu  Federation Championship
+                    </h2>
+                    <ul>
+                        <li>Ui (live demonstration of combat systems with or without various weapons)</li>
+                        <li>Fighting (full contact combats on the prize-ring)</li>
+                        <li>Shuai jiao (traditional chinese wrestling)</li>
+                        <li>Da-Zen  (combats with nontraumatic swords “zen”)</li>
+                    </ul>
+                </div>
+
+                <paper-card class="flex">
+                </paper-card>
+            </div>
+
+        </section>
+
+
+
+    </template>
+
+    <script>
+        'use strict';
+
+
+        Polymer({
+            is: "section-events",
+            ready: function () {
+                new SimpleSlider(this.$.festSlider, {
+                    autoPlay:true,
+                    transitionProperty: 'opacity',
+                    startValue: 0,
+                    visibleValue: 1,
+                    endValue: 0,
+                    transitionTime:1,
+                    transitionDelay:3.5
+                } );
+                new SimpleSlider(this.$.champSlider, {
+                    autoPlay:true,
+                    transitionProperty: 'opacity',
+                    startValue: 0,
+                    visibleValue: 1,
+                    endValue: 0,
+                    transitionTime:1,
+                    transitionDelay:3.5
+                } );
+            }
+        })
+    </script>
+</dom-module>
