@@ -1,11 +1,9 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 
-<link rel="import" href="/bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="/bower_components/app-layout/app-drawer/app-drawer.html">
-<link rel="import" href="/bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="/bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="/bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
@@ -19,12 +17,15 @@
 <link rel="import" href="section-organizers.html">
 <link rel="import" href="section-countries.html">
 <link rel="import" href="section-events.html">
+<link rel="import" href="section-ground.html">
+
 
 
 <dom-module id="main-app">
     <template>
         <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
             app-drawer {
+                z-index: 999;
                 --app-drawer-width: 70%;
                 --app-drawer-content-container: {
                     background-image: url(/images/drawer_bg.svg);
@@ -33,16 +34,34 @@
                     background-position: left center;
                     overflow: auto;
                 }
+
             }
 
             app-header {
-                height: 30em;
-                background: var(--paper-orange-800);
-                @apply(--shadow-elevation-2dp);
-                --app-header-background-front-layer: {
-                    background-image: url(/images/main_bg.jpg);
-                    background-position: center center;
+                z-index: 998;
+                @apply(--layout-fixed-top);
+                color: #ffffff;
+                --app-header-background-rear-layer: {
+                    background-color: rgba(239, 108, 0, 0.8);
                 };
+
+            }
+            .app-top {
+                height: 10em;
+                background-image: url(/images/main_bg.jpg);
+                background-position: center center;
+                background-size: cover;
+                padding: 10em 0;
+                text-align: center;
+                position: relative;
+            }
+            .top-shadow {
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
             }
 
             .menu-toggler {
@@ -51,11 +70,11 @@
                     color: #ffffff;
                 }
             }
-
-            .second-toolbar {
-                height: 10em;
-                @apply(--layout-horizontal);
-                @apply(--layout-center-justified);
+            .cond-title {
+                margin-left: 5em;
+                font-family: 'FuturaNew', Helvetica, Arial, sans-serif;
+                font-weight: normal;
+                text-transform: uppercase;
             }
             .logo {
                 height: 100%;
@@ -71,45 +90,35 @@
             }
         </style>
 
+        <app-drawer id="drawer">
+            <top-menu></top-menu>
+        </app-drawer>
 
-        <app-drawer-layout force-narrow>
+        <app-header effects="waterfall blend-background" reveals>
+            <app-toolbar>
+                <paper-icon-button class="menu-toggler" icon="menu" on-click="_toggleDrawer"></paper-icon-button>
+            </app-toolbar>
+        </app-header>
 
-            <app-drawer>
-                <top-menu></top-menu>
-            </app-drawer>
-
-            <app-header-layout>
-                <app-header condenses reveals
-                            effects="waterfall parallax-background">
-                    <app-toolbar>
-                        <paper-icon-button class="menu-toggler" icon="menu" drawer-toggle></paper-icon-button>
-                    </app-toolbar>
-                    <app-toolbar class="second-toolbar">
-                        <object class="logo" type="image/svg+xml" data="/images/fest_logo_w.svg"></object>
-                    </app-toolbar>
-                </app-header>
-
-                <section-about></section-about>
-                <section-organizers></section-organizers>
-                <section-countries></section-countries>
-                <section-events></section-events>
-
-            </app-header-layout>
-        </app-drawer-layout>
-
-
-
-
-
-
+        <div class="app-top">
+            <object class="logo" type="image/svg+xml" data="/images/fest_logo_w.svg"></object>
+            <div class="top-shadow"></div>
+        </div>
+        <section-about></section-about>
+        <section-organizers></section-organizers>
+        <section-countries></section-countries>
+        <section-events></section-events>
+        <section-ground></section-ground>
     </template>
 
     <script>
         'use strict';
         Polymer({
             is: "main-app",
+            _toggleDrawer: function () {
+                this.$.drawer.toggle();
+            },
             ready: function () {
-
             }
         })
     </script>

@@ -1,0 +1,62 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-ground">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .desc {
+                padding: 2em;
+            }
+            .map {
+                height: 100%;
+                width: 100%;
+                background-image: url(/images/ground/CG_2015_big.jpg);
+                background-size: cover;
+                background-position: right center;
+            }
+
+            @media (max-width: 1024px) {
+                .map-container {
+                    height: 15em;
+                }
+                .map {
+                    background-size:300%;
+                }
+
+            }
+        </style>
+
+        <section class="h-container">
+            <div class="desc flex">
+                <h1>
+                    Festival ground
+                </h1>
+                <p class="accent">
+                    Universal Sports Arena “Aquarium”
+                </p>
+                <p><strong>Competition area:</strong> more than 18 000 square meters</p>
+                <p><strong>Grand stands capacity:</strong> more than 2200 spectators</p>
+                <p><strong>Location:</strong>  Crocus City (entrance into the 3rd  Exhibition Hall of Crocus Expo, hall 19, on the left
+                    hand of the hotel Aquarium entrance)</p>
+                <p><strong>Address:</strong>  66th kilometer of MKAD</p>
+
+            </div>
+            <div class="flex-2 map-container">
+                <a href="/images/ground/CG_2015_big.jpg" target="_blank" class="map-link">
+                    <div class="map"></div>
+                </a>
+            </div>
+
+        </section>
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-ground"
+        })
+    </script>
+</dom-module>
