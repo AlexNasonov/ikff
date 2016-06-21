@@ -1,12 +1,15 @@
 <link rel="import" href="/bower_components/polymer/polymer.html">
 
+<!--
 <link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
 <link rel="import" href="/bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="/bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="/bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+-->
 
 <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+
 
 <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
 
@@ -70,14 +73,14 @@
                     color: #ffffff;
                 }
             }
-            .cond-title {
-                margin-left: 5em;
-                font-family: 'FuturaNew', Helvetica, Arial, sans-serif;
-                font-weight: normal;
-                text-transform: uppercase;
-            }
             .logo {
                 height: 100%;
+            }
+            .app-footer {
+                height: 4em;
+                text-align: right;
+                padding: 0.5em 2em;
+                background-color: var(--paper-red-700);
             }
 
             @media (max-width: 1024px) {
@@ -90,6 +93,8 @@
             }
         </style>
 
+        <!--
+
         <app-drawer id="drawer">
             <top-menu></top-menu>
         </app-drawer>
@@ -100,6 +105,8 @@
             </app-toolbar>
         </app-header>
 
+        -->
+
         <div class="app-top">
             <object class="logo" type="image/svg+xml" data="/images/fest_logo_w.svg"></object>
             <div class="top-shadow"></div>
@@ -109,6 +116,10 @@
         <section-countries></section-countries>
         <section-events></section-events>
         <section-ground></section-ground>
+
+        <div class="app-footer">
+            <img class="logo" src="/images/fest_logo_w_short.svg">
+        </div>
     </template>
 
     <script>

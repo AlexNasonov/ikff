@@ -35,11 +35,23 @@
                 background-size: cover;
                 background-position: top center;
             }
-            .banner {
-                min-height: inherit;
 
+            @media (max-width: 1640px) {
+                paper-card {
+                    height: 20em;
+                }
             }
-
+            @media (max-width: 1024px) {
+                paper-card {
+                    width: 20em;
+                    margin: 0 auto;
+                }
+            }
+            @media (max-width: 480px) {
+                paper-card {
+                    width: 100%;
+                }
+            }
 
             @media (max-width: 1024px) {
                 .block {
