@@ -85,13 +85,13 @@ paper-button, h4, h5, h6, .accent {
     font-weight: 300;
     text-transform: uppercase;
 }
-li {
+ul li {
     position: relative;
     list-style: none;
     margin: 0.2em 0;
 }
 
-li:before {
+ul li:before {
     content: "\e049";
     font-family: Glyphicons, serif;
     font-style: normal;

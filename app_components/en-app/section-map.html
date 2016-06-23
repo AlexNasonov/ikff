@@ -1,0 +1,100 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=en_US" type="text/javascript"></script>
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-map">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+                height: 30em;
+                background-color: var(--paper-amber-500);
+            }
+
+            .map-container {
+                width: 100%;
+                height: 100%;
+            }
+            .desc {
+                padding: 2em;
+                background-image: url("/images/ground/bus.svg");
+                background-repeat: no-repeat;
+                background-position: 80% bottom;
+                background-size: 70%;
+            }
+            li {
+                margin-bottom: 1em;
+            }
+            @media (max-width: 1024px) {
+                section {height: auto;}
+                .map-container {
+                    height: 15em;
+                }
+            }
+        </style>
+
+        <section class="h-container">
+            <div class="desc flex">
+                <h1>
+                    How to get to Festival?
+                </h1>
+                <ol>
+                    <li>Metro station “Myakinino” 10 minutes by walk</li>
+                    <li>Metro station “Tushinskaya” by buses №631, 640, by minibuses № 450, 631</li>
+                    <li>Metro station “Shukinskaya” by buses №687 , 640</li>
+                    <li>Metro station  “Strogino» by buses №631, 652</li>
+                    <li>Metro station “Molodezhnaya” by  bus  №441, by minibus № 441М</li>
+
+                </ol>
+
+            </div>
+            <div class="map-container flex-2" id="map">
+
+            </div>
+        </section>
+
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-map",
+            ready: function () {
+                ymaps.ready(init);
+                var myMap, myPlacemark;
+
+                function init(){
+                    myMap = new ymaps.Map("map", {
+                        center: [55.827584,37.389655],
+                        zoom: 14,
+                        controls: ["zoomControl", "searchControl"]
+                    });
+
+                    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                        hintContent: 'Собственный значок метки'
+                    }, {
+                        // Опции.
+                        // Необходимо указать данный тип макета.
+                        iconLayout: 'default#image',
+                        // Своё изображение иконки метки.
+                        iconImageHref: '/images/ground/marker.png',
+                        // Размеры метки.
+                        iconImageSize: [100,100],
+                        // Смещение левого верхнего угла иконки относительно
+                        // её "ножки" (точки привязки).
+                        iconImageOffset: [-50, -80]
+                    });
+
+                    myMap.geoObjects.add(myPlacemark);
+
+
+
+                }
+            }
+        })
+    </script>
+</dom-module>
