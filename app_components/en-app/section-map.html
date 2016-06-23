@@ -10,20 +10,29 @@
     <template>
         <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
             section {
-                height: 30em;
+                min-height: 30em;
                 background-color: var(--paper-amber-500);
             }
 
             .map-container {
-                width: 100%;
-                height: 100%;
+                height: inherit;
             }
-            .desc {
+            .desc-1, .desc-2 {
                 padding: 2em;
-                background-image: url("/images/ground/bus.svg");
                 background-repeat: no-repeat;
                 background-position: 80% bottom;
-                background-size: 70%;
+                background-size: auto 70%;
+            }
+            .desc-1{
+                background-image: url(/images/map/bus.svg);
+            }
+            .desc-2{
+                background-image: url(/images/map/hotel.svg);
+                background-size: auto 55%;
+                background-position: 80% 80%;
+            }
+            .desc-2 p {
+                margin: 0;
             }
             li {
                 margin-bottom: 1em;
@@ -31,27 +40,42 @@
             @media (max-width: 1024px) {
                 section {height: auto;}
                 .map-container {
-                    height: 15em;
+                    height: 20em;
                 }
             }
         </style>
 
         <section class="h-container">
-            <div class="desc flex">
+            <div class="desc-1 flex">
                 <h1>
                     How to get to Festival?
                 </h1>
-                <ol>
-                    <li>Metro station “Myakinino” 10 minutes by walk</li>
-                    <li>Metro station “Tushinskaya” by buses №631, 640, by minibuses № 450, 631</li>
-                    <li>Metro station “Shukinskaya” by buses №687 , 640</li>
-                    <li>Metro station  “Strogino» by buses №631, 652</li>
-                    <li>Metro station “Molodezhnaya” by  bus  №441, by minibus № 441М</li>
+                <ul>
+                    <li class="glyphicons train">Metro station “Myakinino” 10 minutes by walk</li>
+                    <li class="glyphicons bus">Metro station “Tushinskaya” by buses №631, 640, by minibuses № 450, 631</li>
+                    <li class="glyphicons bus">Metro station “Shukinskaya” by buses №687 , 640</li>
+                    <li class="glyphicons bus">Metro station  “Strogino» by buses №631, 652</li>
+                    <li class="glyphicons bus">Metro station “Molodezhnaya” by  bus  №441, by minibus № 441М</li>
 
-                </ol>
+                </ul>
 
             </div>
-            <div class="map-container flex-2" id="map">
+            <div class="map-container flex" id="map">
+            </div>
+            <div class="desc-2 flex" >
+                <h1>
+                    Where to live?
+                </h1>
+                <p>Proximate hotel and hostels</p>
+                <ol>
+                    <template is="dom-repeat" items="{{hotels}}">
+                        <li>
+                            <p>{{item.name}}</p>
+                            <p>{{item.phone}}</p>
+                            <p><a href="{{item.url}}" target="_blank">{{item.url}}</a></p>
+                        </li>
+                    </template>
+                </ol>
 
             </div>
         </section>
@@ -63,13 +87,43 @@
         'use strict';
         Polymer({
             is: "section-map",
+            properties: {
+                hotels:{
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Hotel Aquarium",
+                                phone: "+7 (495) 727-16-38",
+                                url: "www.aquariumhotel.ru",
+                                coords:[55.828412,37.390887]},
+                            {name: "Hotel Mitino",
+                                phone: "+7 (495) 799-55-25",
+                                url: "www.hotelmitino.ru",
+                                coords:[55.843524,37.382868]},
+                            {name: "Mini hotel-hostel Crocus",
+                                phone: "+7 (968) 439-00-63",
+                                url: "www.crocushostel.ru",
+                                coords:[55.809112,37.377953]},
+                            {name: "Hotel SeverCity",
+                                phone: "+7 (495) 660-29-19",
+                                url: "www.seversiti.ru",
+                                coords:[55.789397,37.451323]},
+                            {name: "Dance Hostel",
+                                phone: "+7 (925) 397-01-29",
+                                url: "www.dancehostel.ru",
+                                coords:[55.809062,37.375428]}
+                        ]
+                    }
+                }
+            },
             ready: function () {
                 ymaps.ready(init);
                 var myMap, myPlacemark;
+                var hotels = this.hotels;
 
                 function init(){
                     myMap = new ymaps.Map("map", {
-                        center: [55.827584,37.389655],
+                        center: [55.824622,37.388725],
                         zoom: 14,
                         controls: ["zoomControl", "searchControl"]
                     });
@@ -90,6 +144,15 @@
                     });
 
                     myMap.geoObjects.add(myPlacemark);
+
+                    for (var i of hotels) {
+                        myMap.geoObjects.add(new ymaps.Placemark(i.coords, {
+                            iconCaption: i.name
+                        }, {
+                            preset: 'islands#redDotIconWithCaption'
+                        }));
+                    }
+
 
 
 

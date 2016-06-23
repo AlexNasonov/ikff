@@ -91,13 +91,20 @@ ul li {
     margin: 0.2em 0;
 }
 
-ul li:before {
-    content: "\e049";
+ul li.glyphicons:before {
     font-family: Glyphicons, serif;
     font-style: normal;
     position: absolute;
     left:-1.5em;
     top: -0.1em;
-    color: var(--paper-red-500);
+}
+ul li.glyphicons.star:before {
+    content: "\e049";
+}
+ul li.glyphicons.bus:before {
+    content: "\e032";
+}
+ul li.glyphicons.train:before {
+    content: "\e015";
 }
 
