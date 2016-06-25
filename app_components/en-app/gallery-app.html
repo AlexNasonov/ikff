@@ -1,0 +1,96 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<!--
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="/bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="/bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="/bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+-->
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+
+<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<link rel="import" href="top-menu.html">
+<link rel="import" href="section-header.html">
+<link rel="import" href="section-gallery.html">
+<link rel="import" href="section-footer.html">
+
+
+
+<dom-module id="gallery-app">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            app-drawer {
+                z-index: 999;
+                --app-drawer-width: 70%;
+                --app-drawer-content-container: {
+                    background-image: url(/images/drawer_bg.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: left center;
+                    overflow: auto;
+                }
+
+            }
+
+            app-header {
+                z-index: 998;
+                @apply(--layout-fixed-top);
+                color: #ffffff;
+                --app-header-background-rear-layer: {
+                    background-color: rgba(239, 108, 0, 0.8);
+                };
+
+            }
+
+            .menu-toggler {
+                --paper-icon-button-ink-color: #ffffff;
+                --paper-icon-button:{
+                    color: #ffffff;
+                }
+            }
+
+
+            @media (max-width: 1024px) {
+
+            }
+
+        </style>
+
+        <!--
+
+        <app-drawer id="drawer">
+            <top-menu></top-menu>
+        </app-drawer>
+
+        <app-header effects="waterfall blend-background" reveals>
+            <app-toolbar>
+                <paper-icon-button class="menu-toggler" icon="menu" on-click="_toggleDrawer"></paper-icon-button>
+            </app-toolbar>
+        </app-header>
+
+        -->
+
+
+        <section-header></section-header>
+        <section-gallery></section-gallery>
+        <section-footer></section-footer>
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "gallery-app",
+            _toggleDrawer: function () {
+                this.$.drawer.toggle();
+            },
+            ready: function () {
+            }
+        })
+    </script>
+</dom-module>

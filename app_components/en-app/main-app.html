@@ -16,6 +16,7 @@
 <link rel="import" href="/app_components/shared-styles/shared-styles.html">
 
 <link rel="import" href="top-menu.html">
+<link rel="import" href="section-header.html">
 <link rel="import" href="section-about.html">
 <link rel="import" href="section-organizers.html">
 <link rel="import" href="section-countries.html">
@@ -23,6 +24,7 @@
 <link rel="import" href="section-ground.html">
 <link rel="import" href="section-program.html">
 <link rel="import" href="section-map.html">
+<link rel="import" href="section-footer.html">
 
 
 
@@ -51,23 +53,6 @@
                 };
 
             }
-            .app-top {
-                height: 10em;
-                background-image: url(/images/main_bg.jpg);
-                background-position: center center;
-                background-size: cover;
-                padding: 10em 0;
-                text-align: center;
-                position: relative;
-            }
-            .top-shadow {
-                height: 2px;
-                width: 100%;
-                position: absolute;
-                left: 0;
-                bottom: 1px;
-                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
-            }
 
             .menu-toggler {
                 --paper-icon-button-ink-color: #ffffff;
@@ -75,31 +60,12 @@
                     color: #ffffff;
                 }
             }
-            .logo {
-                height: 100%;
-            }
-            .app-footer {
-                text-align: right;
-                padding: 0.5em 2em;
-                background-color: var(--paper-red-700);
-                color: #ffffff;
-            }
-            .app-footer .logo{
-                height: 4em;
-            }
-            .app-footer a{
-                color: inherit;
-            }
 
 
             @media (max-width: 1024px) {
 
             }
-            @media (max-width: 400px) {
-                .logo {
-                    width: 80%;
-                }
-            }
+
         </style>
 
         <!--
@@ -116,10 +82,8 @@
 
         -->
 
-        <div class="app-top">
-            <object class="logo" type="image/svg+xml" data="/images/fest_logo_w.svg"></object>
-            <div class="top-shadow"></div>
-        </div>
+
+        <section-header></section-header>
         <section-about async></section-about>
         <section-organizers async></section-organizers>
         <section-countries async></section-countries>
@@ -127,25 +91,7 @@
         <section-ground async></section-ground>
         <section-program async></section-program>
         <section-map async></section-map>
-
-        <div class="app-footer h-container">
-            <div class="flex">
-                <p>All organization questions, aspects with receipt of russian visa and living:
-                <br>Andrey Demin
-                    <br><a href="mailto:demin@kungfu-russia.ru">demin@kungfu-russia.ru</a></p>
-
-            </div>
-            <div class="flex">
-                <p>Sponsorship and informational support:
-                    <br>Andrey Yanichev
-                    <br><a href="mailto:yanichev@kungfu-russia.ru">yanichev@kungfu-russia.ru</a></p>
-
-            </div>
-            <div class="flex">
-                <img class="logo" src="/images/fest_logo_w_short.svg">
-            </div>
-
-        </div>
+        <section-footer></section-footer>
     </template>
 
     <script>

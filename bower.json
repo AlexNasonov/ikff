@@ -21,6 +21,7 @@
     "paper-item": "PolymerElements/paper-item#*",
     "paper-spinner": "PolymerElements/paper-spinner#*",
     "neon-animation": "PolymerElements/neon-animation#*",
-    "SimpleSlider": "^0.6.1"
+    "SimpleSlider": "^0.6.1",
+    "fw-mediaviewer": "^0.1.0"
   }
 }

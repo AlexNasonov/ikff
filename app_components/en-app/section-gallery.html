@@ -1,0 +1,96 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/bower_components/paper-card/paper-card.html">
+
+<link rel="import" href="/bower_components/fw-mediaviewer/fw-mediaviewer.html">
+
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-gallery">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+                background-color: var(--paper-amber-500) !important;
+                padding: 2em;
+            }
+            fw-mediaviewer {
+                --fw-mediaviewer-viewer: {
+                    background-color: var(--paper-amber-500) !important;
+                }
+            }
+            paper-card {
+                width: 12em;
+                height: 9em;
+                margin: 0 0.5em;
+            }
+            .array {
+                text-align: center;
+            }
+            .preview {
+                width:100%;
+                height:100%;
+                background-size: cover;
+                background-position: center center;
+                cursor: pointer;
+            }
+            @media (max-width: 1024px) {
+
+            }
+        </style>
+
+        <section>
+            <h1>2015 International Kung-Fu Festival gallery</h1>
+
+            <div class="array">
+                <template is="dom-repeat" items="{{photos}}">
+                    <paper-card>
+                        <div class="preview" on-click="_openGallery" data-index$="{{item}}"
+                             style="background-image: url(/images/gallery/preview/{{item}}.jpg)"></div>
+                    </paper-card>
+                </template>
+            </div>
+
+            <fw-mediaviewer id="viewer"></fw-mediaviewer>
+
+        </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-gallery",
+            properties: {
+                photos: {
+                    type: Array,
+                    value: function () {
+                        var p = [];
+                        for (var i = 1; i<=30; i++) {
+                            if (i<10) p.push('0'+i.toString());
+                            else p.push(i.toString());
+                        }
+                        return p;
+                    }
+                }
+            },
+            _openGallery:function (e) {
+                var n = e.target.getAttribute('data-index');
+
+                const mv = this.$.viewer;
+                mv.selectedIndex = parseInt(n)-1;
+                mv.withBackdrop = false;
+                mv.open();
+            },
+
+            ready: function () {
+                var self = this;
+                var media = [];
+                for (var i of this.photos) media.push( {type: 'image', src: '/images/gallery/'+i+'.jpg'});
+                this.$.viewer.items = media;
+            }
+        })
+    </script>
+</dom-module>

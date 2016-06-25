@@ -6,6 +6,9 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
     res.render('main', {lang: "en", title: "International Kung-Fu Festival"});
 });
+router.get('/gallery', function (req, res, next) {
+    res.render('gallery', {lang: "en", title: "International Kung-Fu Festival"});
+});
 
 
 /* LOGOUT */
