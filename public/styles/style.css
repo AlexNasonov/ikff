@@ -75,15 +75,15 @@ p, ul, span {
 }
 
 h1, h2, h3, .stat {
-    font-family: 'FuturaNew', Helvetica, Arial, sans-serif;
+    font-family: 'FuturaNew', Helvetica, Arial, sans-serif !important;
     font-weight: normal;
     text-transform: uppercase;
 }
 
 paper-button, h4, h5, h6, .accent {
-    font-family: 'PFMediumItalic', 'Arial Narrow', sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
+    font-family: 'PFMediumItalic', 'Arial Narrow', sans-serif !important;
+    font-weight: 300 !important;
+    text-transform: uppercase !important;
 }
 ul li {
     position: relative;

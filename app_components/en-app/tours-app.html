@@ -17,18 +17,12 @@
 
 <link rel="import" href="top-menu.html">
 <link rel="import" href="section-header.html">
-<link rel="import" href="section-about.html">
-<link rel="import" href="section-organizers.html">
-<link rel="import" href="section-countries.html">
-<link rel="import" href="section-events.html">
-<link rel="import" href="section-ground.html">
-<link rel="import" href="section-program.html">
-<link rel="import" href="section-map.html">
+<link rel="import" href="section-tours.html">
 <link rel="import" href="section-footer.html">
 
 
 
-<dom-module id="main-app">
+<dom-module id="tours-app">
     <template>
         <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
             app-drawer {
@@ -84,20 +78,14 @@
 
 
         <section-header></section-header>
-        <section-about id="sectionAbout" async></section-about>
-        <section-organizers id="sectionOrganizers" async></section-organizers>
-        <section-countries id="sectionCountries" async></section-countries>
-        <section-events id="sectionEvents" async></section-events>
-        <section-ground id="sectionGround" async></section-ground>
-        <section-program id="sectionProgram" async></section-program>
-        <section-map id="sectionMap" async></section-map>
+        <section-tours></section-tours>
         <section-footer id="sectionFooter"></section-footer>
     </template>
 
     <script>
         'use strict';
         Polymer({
-            is: "main-app",
+            is: "tours-app",
             _toggleDrawer: function () {
                 this.$.drawer.toggle();
             },

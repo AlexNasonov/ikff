@@ -50,28 +50,28 @@
             <div class="menu-group">
                 <span class="heading">About</span>
                 <template is="dom-repeat" items="{{menuAbout}}">
-                    <paper-button>{{item.name}}</paper-button>
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
                 </template>
             </div>
 
             <div class="menu-group">
                 <span class="heading">Festival</span>
                 <template is="dom-repeat" items="{{menuFestival}}">
-                    <paper-button>{{item.name}}</paper-button>
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
                 </template>
             </div>
 
             <div class="menu-group">
                 <span class="heading">Travel</span>
                 <template is="dom-repeat" items="{{menuTravel}}">
-                    <paper-button>{{item.name}}</paper-button>
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
                 </template>
             </div>
 
             <div class="menu-group">
                 <span class="heading">More</span>
                 <template is="dom-repeat" items="{{menuMore}}">
-                    <paper-button>{{item.name}}</paper-button>
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
                 </template>
             </div>
         </div>
@@ -88,11 +88,11 @@
                     type: Array,
                     value: function () {
                         return [
-                            {name: "About  Festival", url: ""},
-                            {name: "Organizers", url: ""},
-                            {name: "Participating Countries", url: ""},
-                            {name: "Information support", url: ""},
-                            {name: "Partners", url: ""}
+                            {name: "About  Festival", url: "/#sectionAbout"},
+                            {name: "Organizers", url: "/#sectionOrganizers"},
+                            {name: "Participating Countries", url: "/#sectionCountries"},
+                            {name: "Information support", url: "/#sectionProgram"},
+                            {name: "Partners", url: "/#sectionProgram"}
                         ]
                     }
                 },
@@ -100,9 +100,9 @@
                     type: Array,
                     value: function () {
                         return [
-                            {name: "Festival Events", url: ""},
-                            {name: "Festival Ground", url: ""},
-                            {name: "Festival Program", url: ""}
+                            {name: "Festival Events", url: "/#sectionEvents"},
+                            {name: "Festival Ground", url: "/#sectionGround"},
+                            {name: "Festival Program", url: "/#sectionProgram"}
                         ]
                     }
                 },
@@ -110,9 +110,9 @@
                     type: Array,
                     value: function () {
                         return [
-                            {name: "How to get to Festival?", url: ""},
-                            {name: "Where to live?", url: ""},
-                            {name: "Escorted tours", url: ""}
+                            {name: "How to get to Festival?", url: "/#sectionMap"},
+                            {name: "Where to live?", url: "/#sectionMap"},
+                            {name: "Escorted tours", url: "/tours"}
                         ]
                     }
                 },
@@ -120,11 +120,15 @@
                     type: Array,
                     value: function () {
                         return [
-                            {name: "IKFF 2015", url: ""},
-                            {name: "Contacts", url: ""}
+                            {name: "IKFF 2015", url: "/gallery"},
+                            {name: "Contacts", url: "#sectionFooter"}
                         ]
                     }
                 }
+            },
+            _goTo: function (e) {
+                var url = e.target.getAttribute('data-url');
+                window.location.replace(url);
             }
         })
     </script>

@@ -22,6 +22,9 @@
     "paper-spinner": "PolymerElements/paper-spinner#*",
     "neon-animation": "PolymerElements/neon-animation#*",
     "SimpleSlider": "^0.6.1",
-    "fw-mediaviewer": "^0.1.0"
+    "fw-mediaviewer": "^0.1.0",
+    "paper-dialog": "PolymerElements/paper-dialog#^1.0.4",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.2.2",
+    "iron-form": "PolymerElements/iron-form#^1.0.16"
   }
 }
