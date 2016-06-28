@@ -16,6 +16,7 @@
     "morgan": "^1.7.0",
     "nconf": "^0.8.4",
     "node-uuid": "^1.4.7",
+    "nodemailer": "^2.4.2",
     "pg": "^5.1.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.23.3",
