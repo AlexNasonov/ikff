@@ -19,7 +19,7 @@
 	.st4{font-size:24px;}
 	.st5{font-size:20px;}
 </style>
-
+<a href="/" target="_top">
     <g>
         <g>
 		<path class="st0" d="M308.6,94.1c-0.4,1-1,2.4-1.5,3.5c0.2-0.4,0.2-0.5,0.5-1.1c1.3-3.3,2-6.8,2.1-10.5c0.1-1.9,0.4-3.6,0.9-5
@@ -94,4 +94,5 @@
 </g>
 <rect x="-13.9" y="128.7" class="st2" width="346.8" height="55.7"/>
 <text transform="matrix(1 0 0 1 7.7396 146.1103)"><tspan x="0" y="0" class="st3 st4">VI International Cultural Kung-Fu Festival</tspan><tspan x="0.9" y="24" class="st3 st5">V International Kung-Fu Federation Championship</tspan></text>
+</a>
 </svg>
