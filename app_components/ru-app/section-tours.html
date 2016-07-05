@@ -1,0 +1,654 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="/bower_components/iron-form/iron-form.html">
+
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="/bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="/bower_components/paper-input/paper-input.html">
+
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-tours">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+
+                background-color: var(--paper-amber-500);
+            }
+
+            .tour-block {
+                padding: 2em;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff9800+0,ffffff+100&1+0,0+100 */
+                background: -moz-linear-gradient(top, rgba(255, 152, 0, 1) 0%, rgba(255, 255, 255, 0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(255, 152, 0, 1) 0%, rgba(255, 255, 255, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(255, 152, 0, 1) 0%, rgba(255, 255, 255, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9800', endColorstr='#00ffffff', GradientType=0); /* IE6-9 */
+
+            }
+
+            .round {
+                border-radius: 50%;
+                background-size: cover;
+                background-position: center;
+                width: 15em;
+                margin: 0 1em;
+            }
+
+            .lists ul {
+                display: block;
+                padding-right: 3em;
+            }
+
+            paper-button {
+                background-color: var(--paper-red-500);
+                color: #ffffff;
+            }
+
+            paper-button iron-icon {
+                margin-right: 1em;
+            }
+
+            paper-dialog h4 {
+                text-align: center;
+                color: var(--paper-red-500);
+            }
+
+            @media (max-width: 1024px) {
+                .round {
+                    width: 10em;
+                }
+            }
+        </style>
+
+        <section>
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/red_square_.jpg)">
+                    </div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">MOSCOW CITY TOUR</h2>
+                    <h4>What You Can Expect</h4>
+                    <p> Moscow City Tour is the BEST private introduction to Moscow.</p>
+                    <p> Our local guides take you on a personal <strong>4 hour</strong> sightseeing tour of Moscow.
+                        We’ll show you the city that we love in a comfortable car or minivan or bus. During the driving
+                        City Tour you will learn the history of Moscow and you’ll see all the Moscow’s major
+                        attractions.
+                    </p>
+                    <p> Continuing your sightseeing tour, pass Kremlin, admire the famous Red Square, and make a photo
+                        stop at the «Swanlake». You'll also see St. Basil’s Cathedral, Mausoleum of Lenin, Bolshoi
+                        Theater, the Russian Government House, Cathedral of Christ the Saviour and Novodevichy Convent,
+                        the main Tverskaya street and Moscow State University the highest building of the eight Stalin's
+                        skyscrapers.
+                    </p>
+                    <p> Our City Tour is more that simple sightseeing tour. It is an introduction to daily life of
+                        Moscow city, its famous places, restaurants, souvenirs, shopping, driving, public
+                        transportation, public telephones and other everyday needs of Moscow residents. After the City
+                        Tour You will know where cook the best hot chocolate in Moscow and where is the better to try
+                        “Borsh”, where to go at night to dance and where to pass time with the children in Moscow.
+                        Our guides are knowledgeable and helpful and they will answer all your questions. </p>
+                    <p> The Moscow City Tour provides for <strong>several stops*</strong> for you to explore the sights
+                        and take photos.
+                        <br>* stops are subject to change
+                    <h4>What You Will See</h4>
+                    <div class="h-small-container lists">
+                        <ul>
+                            <li class="glyphicons star">Red Square</li>
+                            <li class="glyphicons star">St. Basil’s Cathedral</li>
+                            <li class="glyphicons star">GUM</li>
+                            <li class="glyphicons star">Manezhnaya Square</li>
+                        </ul>
+                        <ul>
+                            <li class="glyphicons star">Cathedral of Christ the Saviour</li>
+                            <li class="glyphicons star">Novodevichy Convent</li>
+                            <li class="glyphicons star">Moscow State University</li>
+                        </ul>
+                    </div>
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li class="glyphicons star">Private professional licensed guide</li>
+                        <li class="glyphicons star">Comfortable an air-conditioned car/minivan/bus</li>
+                        <li class="glyphicons star">Professional Driver</li>
+                        <li class="glyphicons star">Free Vodka tasting</li>
+                    </ul>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/armoury_chamber_.jpg)">
+                    </div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">KREMLIN TOUR WITH THE ARMOURY CHAMBER</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>
+                        After visiting the territory and cathedrals of the Kremlin you will admire the Armory Chamber,
+                        a treasure-house that preserves ancient arms, the tsars’ crown jewels and many magnificent works
+                        of art.
+                    </p>
+                    <p>
+                        Here, you will see unique specimens of Russian and foreign craftsmanship, royal regalia and
+                        gifts from ambassadors. You will admire the famous golden "cap" of Vladimir Monomakh, used to
+                        crown all Russian tsars until Peter I, and the imperial crown of Catherine I, made of gilded
+                        silver. The Armoury has the finest collection of old English silverware in the world, made by
+                        London silversmiths of the 16th and 17th centuries, Faberge Easter eggs and a unique collection
+                        of carriages spanning the 16th and 18th centuries.
+                    </p>
+                    <p>
+                        The highest artistic level and particular historical and cultural value of the exhibits have
+                        made the State Armory of the Moscow Kremlin a worldwide known museum.
+                    </p>
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li class="glyphicons star">History Narration by private professional licensed guide</li>
+                        <li class="glyphicons star">Special route that will help you admire more than four thousands
+                            items of for 1,5 hours
+                        </li>
+                        <li class="glyphicons star">Entry without queuing</li>
+                    </ul>
+                    <p>
+                        We also invite you to visit <strong>The Diamond Fund</strong> that has a unique collection of
+                        jewelry arts of the best masters from Russia and worldwide. There are rare samples of gems
+                        and nuggets of precious metals. The Diamond Fund which was created by Peter the Great as
+                        storage of unique state treasures and jewelry is the most gorgeous museum of Russia.
+                    </p>
+                    <h4>Important</h4>
+                    <p>A Kremlin Tour may include one or several attractions, such as:</p>
+                    <ol>
+                        <li>tour of the Kremlin territory and the cathedrals (1,5 hours)</li>
+                        <li>tour of the Kremlin territory and the cathedrals + the Armory (3 hours)</li>
+                        <li>tour of the Kremlin territory and the cathedrals + visiting the Diamond Fund (2 hours)</li>
+                        <li>tour of the Armory + visiting the Diamond Fund (2 hours)</li>
+                        <li>tour of the Kremlin territory and the cathedrals + the Armory + visiting the Diamond Fund
+                            (3.5 hours)
+                        </li>
+                    </ol>
+                    <p>Please contact us if you wish to book a special excursion program.</p>
+
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/grand_kremlin_.jpg)">
+                    </div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">GRAND KREMLIN PALACE</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>During excursion to the Grand Kremlin Palace you visit:</p>
+                    <p>
+                        <strong>Faceted Chamber</strong> - the premises of chamber are a part of the Grand Kremlin
+                        Palace,
+                        the remained building of the end of the XV century, constructed under the decree of the
+                        tsar Ivan III, originally called Big chamber, the main smart hall of the grand-ducal palace.
+                        Today it host the receptions only the highest level.
+                    </p>
+                    <p><strong>The Andreevsky hall</strong> - a throne-room, is called in honor of the Order
+                        of St. Andrew the Apostle the First-Called founded in 1698, the motto "For Belief and Fidelity".
+                        It is a venue of festive events of the Russian state.</p>
+                    <p><strong>The Aleksandrovsky hall</strong> - called in honor of the Order of St. Alexander Nevsky
+                        founded in 1725, under the motto "For Works and the Fatherland". Magnificently gilded furniture
+                        of a hall is in harmony with a unique parquet floor from 30 breeds of trees. Constructed in
+                        1838-1849 by the architect K.Ton, these halls were destroyed in 1932-1934. On their place the
+                        conference hall of the Supreme Council of the USSR was arranged restored. But in 1994-1999 there
+                        were restored by order of the President of Russia.</p>
+                    <p><strong>The Vladimir hall</strong> - a small hall which connects constructions of the palace
+                        XV-XVII and XIX of centuries.</p>
+                    <p><strong>The hall of St. George</strong> - called in honor of the military Order of
+                        Saint George of Pobedonosts, the highest award of the Russian army. On walls of the hall there
+                        are marble boards with the gold letters of surnames of military of the Russian army cut on them
+                        which were awarded this rank. Among them Suvorov, Kutuzov, Ushakov, Nakhimov's surnames. The
+                        interior of the hall has differs unique solemnity, it is decorated by six chandeliers, each
+                        weighing three tons, the parquet floor made more than of 20 tree.</p>
+                    <p><strong>Rooms of the Teremny palace</strong> with Krestovy chamber and the Gold Porch
+                    </p>
+                    <p><strong>Guest extension</strong> (Anteroom)</p>
+                    <p><strong>Own half of rooms of the empress</strong> with an office and a bedchamber.
+                    </p>
+                    <h4>Important</h4>
+                    <ol>
+                        <li>Each participant of excursion has to have the passport ORIGINAL on hands.</li>
+                        <li>On excursion to the Grand Kremlin Palace late comes aren't allowed.</li>
+                    </ol>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/night_moscow_.jpg)">
+                    </div>
+                </div>
+
+                <div class="flex-5">
+                    <h2 class="tour-title">MOSCOW BY NIGHT <span style="color: #f5f5f5;">(One of the most popular)</span></h2>
+                    <h4>What You Can Expect</h4>
+                    <p>
+                        We'll take you by car through the most interesting spots such as the Kremlin, the
+                        embankment of Moscow river, the amazing Kutuzovskiy avenue, the Victory Park on Poklonnaya and
+                        many others. We can hop off where you want and walk around the places.
+                    </p>
+                    <p> And of course, you will discover “true” Moscow nightlife…</p>
+                    <p> This tour can also be interesting if you are leaving Moscow in the evening and want to spend
+                        the final hours to get the last glimpse of Moscow.</p>
+                    <p>
+                        Moscow By Night Tour provides for <strong>several stops</strong> for you to explore the sights
+                        and take photos.<br>* stops are subject to change
+                    </p>
+                    <div class="h-small-container lists">
+                        <ul>
+                            <li class="glyphicons star">View point of the "Bagration" Bridge</li>
+                            <li class="glyphicons star">Skyscrapers Moscow City</li>
+                            <li class="glyphicons star">Victory Park on Poklonnaya Hill</li>
+                            <li class="glyphicons star">Sparrow Hills (Vorobyovy Gory)</li>
+                        </ul>
+                        <ul>
+                            <li class="glyphicons star">View point of the Novodevichy Convent Park</li>
+                            <li class="glyphicons star">Manezhnaya Square</li>
+                            <li class="glyphicons star">Red Square</li>
+                        </ul>
+                    </div>
+                    <h4>Highlights</h4>
+                    <ul>
+                        <li class="glyphicons star">Private professional licensed guide</li>
+                        <li class="glyphicons star">Comfortable an air-conditioned car/minivan/bus with a music box</li>
+                        <li class="glyphicons star">Professional Driver</li>
+                        <li class="glyphicons star">Free glass of champagne</li>
+                    </ul>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/underground_.jpg)">
+                    </div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">MOSCOW METRO AND OLD ARBAT STREET</h2>
+                    <h4>What You Can Expect</h4>
+                    <p><strong>Arbat Street</strong> mainly referred to as <strong>the Arbat</strong>, is a
+                        pedestrian street about one kilometer long in the historical center of Moscow.
+                        The Arbat has existed since at least the 15th century, thus laying claim to being one of
+                        the oldest surviving streets of the Russian capital. It forms the heart of the
+                        Arbat District of Moscow. Originally the street formed part of an important trade route and was
+                        home to a large number of craftsmen.</p>
+                    <p>In the 18th century, the Arbat came to be regarded by the Russian nobility as the
+                        most prestigious living area in Moscow. The street was almost completely destroyed by the great
+                        fire during Napoleon's occupation of Moscow in 1812 and had to be rebuilt. In the 19th
+                        and early 20th centuries it became known as the place where petty nobility, artists, and
+                        academics lived. In the Soviet period, it was the home of many high-ranking government
+                        officials.</p>
+                    <p>Today the street and its surroundings are undergoing gentrification, and it is
+                        considered a desirable place to live. Because of the many historic buildings, and the numerous
+                        artists who have lived and worked in the street, the Arbat is also an important tourist
+                        attraction.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/tretyakov_old_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">TRETYAKOV GALLERY: OLD BUILDING</h2>
+                    <h4>What You Can Expect</h4>
+                    <p><strong>The State Tretyakov Gallery </strong>is the national treasure of Russia fine
+                        art and one of the greatest museums in the world. It was formed in 1856 and named after its
+                        founder, Pavel Tretyakov, who donated his private collection to the City of Moscow in 1892. The
+                        Gallery’s collection consists entirely of Russian paintings, sculptures, graphics and unique
+                        icons.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/red_square2_.jpg)">
+                    </div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">RED SQUARE AND ST BASIL’S CATHEDRAL</h2>
+                    <h4>What You Can Expect</h4>
+                    <p><strong>Red Square </strong>is the main square of the country. It was a participant of two most
+                        important military parades – on 7 November 1941, and the Victory Parade in 1945.</p>
+                    <p><strong>St Basil’s Cathedral</strong> was erected by two Russian architectural masters Barma and
+                        Postnic in 1555-1561 by order of Tsar Ivan the Terrible in commemoration of the capture of
+                        the city of Kazan. The museum has the unique collection of icons from XVI-XIX centuries as well
+                        as relics of applied arts.
+                    </p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/palaty_boyar_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">THE ROMANOW BOYARS’ CHAMBER IN ZARYADYE AND VARVARKA STREET</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>The Romanov boyars’ chambers shows the lifestyle of the 17<sup>th</sup> century of the Romanov
+                        boyars. According to legend, Michael Romanov – the first tsar of the Romanov dynasty – was born
+                        here. The interior is very much like a typical wealthy boyars’ house This is the only museum
+                        where the real home-life before Peter the Great is represented.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/bunker_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">SECRET SOVIET BUNKER OF THE COLD WAR TIMES</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>Bunker-42 is a unique object – the one and only extant underground bunker situated at 65 meters
+                        underground in the center of Moscow. It was built in the 50’s at the height of the confrontation
+                        period between the USSA and the USA and completely equipped with all the required
+                        in case of a nuclear attack. Massive armored doors and steel trimming of walls have
+                        preserved till nowadays.</p>
+                    <p>During the tour you will pass along the tunnels and corridors of the secret bunker.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/space_exploration_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">MEMORAL MUSEUM OF SPACE EXPLORATION</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>The <strong>Memorial Museum of Astronautics</strong> (also known as the Memorial Museum of
+                        Cosmonautics or Memorial Museum of Space Exploration) is a museum in Moscow, Russia, dedicated
+                        to space exploration. It is located within the base of the soaring Monument
+                        to the Conquerors of Space in the northeast of the city. The museum contains a wide variety of
+                        space-related exhibits and models which explore the history of flight; astronomy; space
+                        exploration; space technology; and space in the arts. According to the Russian tourist board,
+                        the museum's collection holds approximately 85,000 different items, and receives approximately
+                        300,000 visitors yearly.
+                    </p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/pushkin_fine_arts_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">PUSHKIN FINE ARTS MUSEUM: Main Building</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>The <strong>Pushkin Museum of Fine Arts</strong> is the largest museum of European art in Moscow.
+                        The Pushkin State Museum of Fine Arts has one of the most representative collection in Russia of
+                        foreign art dated from ancient times to modern days. The exposition of the Museum includes today
+                        a vast collection of tinted plaster casts of famous ancient, medieval and Renaissance sculptures
+                        and a collection of original works of foreign artists, sculptors and graphics together with
+                        objects of decorative arts.</p>
+                    <p>The rooms of the ground floor present mainly the original works: works of art of Ancient Egypt,
+                        antiquities, European paintings of the VII-XVIII centuries; two halls - Italian and Greek
+                        courtyards are housing casts. On the first floor there are rooms with casts of Ancient Greece,
+                        Rome, Middle Ages and Renaissance. The rooms of painting acquaint the public with the art of the
+                        XIX th and XX th centuries</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/kolomenskoe_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">KOLOMENSKOE MUSEUM STATE</h2>
+                    <h4>What You Can Expect</h4>
+                    <p>Kolomenskoe is a unique oasis in the center of Moscow and summer residence of Russian Czars since
+                        the time of Ivan the Terrible. Its church, built in 1530, was once called the Eighth Wonder of
+                        the World, and the oak trees are at least as old as everything else in the park. You will see
+                        the house of Peter the Great and will visit the Colonel’s chambers museum.
+                    </p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/museum_tsaritsino_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">MUSEUM AND NATURE PRESERVE TSARITSINO</h2>
+                    <h4>What You Can Expect</h4>
+                    <p><strong>Tsaritsino</strong> - architectual and park ensemble of the
+                        18<sup>th</sup>-19<sup>th</sup> century in pseudo-Gothic style (constructed by Bazhenov, later
+                        Kazakov). Collection of paintings, drawings, sculpture and works of applied arts, beads and
+                        glassware, silver and cut glass of the late 18<sup>th</sup>-early 20<sup>th</sup> century.
+                    </p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/armed_forces_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title">Central Armed Forces Museum</h2>
+                    <p> Central Armed Forces Museum - one of the largest military and historical museums of the world.
+                        It
+                        was founded in December, 1919. The exposition of the museum takes place in 24 halls and on the
+                        open
+                        area. It reflects history of Armed forces of Russia from the moment of their origin in a regular
+                        basis so far. In shops of the museum it is possible to get large-scale models copies of military
+                        equipment, work of a military and historical miniature, literature and souvenirs.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/auto_retro_.jpg)"></div>
+                </div>
+
+                <div class="flex-5"><h2 class="tour-title">Moscow Auto Retro Museum</h2>
+                    <p>
+                        It is possible to call this museum a time machine. Here you can plunge into the past atmosphere,
+                        in those far times when the car was an unprecedented innovation, luxury goods and pride. In the
+                        halls of the museum it is possible to overcome the insuperable – to become the master of time,
+                        to touch past subjects. The basis of an exposition of our museum cars of the Russian production
+                        among them pre-war make GAZ-A and the well-known GAZ-M1, cars of a Stalin era of cargo ZIS-5 and
+                        representative ZIS-110. All ruler of "Moscvich": from the most rare KIM-10 and "Moscvich"
+                        400-421 (the single copy remained) to the latest models of plant.</p>
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/historical_.jpg)"></div>
+                </div>
+
+                <div class="flex-5">
+                    <h2 class="tour-title"> STATE MUSEUM OF HISTORY </h2>
+                    <p> The State Historical Museum is situated in the heart of Moscow, in Red Square. It is a symbol of
+                        Moscow like the Kremlin and the Saint Basil’s Cathedral. </p>
+                    <p> Museum’s exposition, housed in 40 rooms, covers not only a thousand years of Russian history but
+                        also history of north-eastern Eurasia civilizations from the early Paleolithic Age to the
+                        present. </p>
+                    <h4> Schedule:</h4>
+                    <p> Tue, Wed, Fri Sat 10: 00-18: 00 </p>
+                    <p> Thu, Sun 11: 00-20: 00 </p>
+                    <p> closed on Mondays</p>
+
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+
+            </div>
+
+            <div class="tour-block h-small-container">
+
+                <div class="flex">
+                    <div class="square round"
+                         style="background-image: url(http://meetingpointmoscow.com/images/tours/bulgakov_.jpg)"></div>
+                </div>
+                <div class="flex-5">
+                    <h2 class="tour-title"> "APARTMENT BAD" MUSEUM M. A. Bulgakov </h2>
+                    <p>This 50th floor had a longstanding reputation can call, if not bad, yes strange ...
+                        "(Mikhail Bulgakov's" Master and Margarita "). It was here, in the famous novel where
+                        Voland and his entourage stayed, there was contact with supernatural forces in Moscow then.
+                        There they
+                        celebrated the Grand Ball of Satan. The prototype of the "evil apartment" was an apartment with
+                        the same number 50, Bolshaya Sadovaya, where from 1921 to 1924 in one of the rooms the writer
+                        lived with his first wife Tatiana Lappa. Since 2007 he became the State Museum of Bulgakov. It
+                        is an ancient longhouse of the Soviet proletariat and the rooms on either side of the aisle,
+                        each of which reflects the daily life of Bulgakov lived there for years. The "bad apartment" is
+                        an unusual place mystic, allowing plunge into the atmosphere of the distant era, described in
+                        the novel of the great writer.</p>
+
+                    <h4>Schedule:</h4>
+                    <p> Tues-Sun 12:00 - 19: 00, </p>
+                    <p> Thu 14:00 - 21:00</p>
+
+                    <paper-button class="tour-button">
+                        <iron-icon icon="maps:person-pin-circle"></iron-icon>
+                        Book this tour
+                    </paper-button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <paper-dialog id="tourDialog">
+            <h2>Thank you for choosing:</h2>
+            <div>
+                <h4>{{tour}}</h4>
+
+                <p>
+                    Please, tell us your name and e-mail.<br>
+                    We should contact you soon.
+                </p>
+
+            </div>
+            <form is="iron-form" id="tourForm" method="post" action="/tours">
+                <paper-input required name="tourName" label="Tour name" value="{{tour}}" hidden></paper-input>
+                <paper-input required name="touristName" label="Your name"></paper-input>
+                <paper-input required name="touristEmail" label="Your e-mail"></paper-input>
+                <paper-input required name="tripDate" label="Trip date"></paper-input>
+                <div class="buttons">
+                    <paper-button on-click="_formSubmit">Confirm tour booking</paper-button>
+                </div>
+            </form>
+
+
+        </paper-dialog>
+
+
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-tours",
+            properties: {
+              tour: {
+                  type: String
+              }  
+            },
+            _formSubmit: function () {
+                this.$.tourDialog.close();
+                this.$.tourForm.submit();
+                this.$.tourForm.reset();
+            },
+            ready: function () {
+                var dialog = this.$.tourDialog;
+                var self = this;
+                this.querySelectorAll('paper-button.tour-button').forEach(function (button) {
+                    button.addEventListener('click', function(){
+                        self.tour = button.parentNode.querySelector('h2.tour-title').innerHTML;
+                        dialog.open();
+                    })
+                })
+            }
+        })
+    </script>
+</dom-module>

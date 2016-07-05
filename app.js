@@ -22,7 +22,8 @@ var config = require('./app_modules/config');
 
 // Express routes
 var routes = {
-    index: require('./routes/main')
+    main: require('./routes/main'),
+    rumain: require('./routes/rumain')
 };
 
 var app = express();
@@ -59,7 +60,8 @@ app.use(session({
 sequelize.sync();//({force:true});
 
 // use routes
-app.use('/', routes.index);
+app.use('/', routes.main);
+app.use('/ru', routes.rumain);
 
 
 

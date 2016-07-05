@@ -1,0 +1,135 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-organizers">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            section {
+                background-color: var(--paper-amber-500);
+                padding: 2em;
+            }
+            .logo{
+                height: 4em;
+                margin-bottom: 1em;
+            }
+            .ava-1, .ava-2 {
+                background-size: cover;
+                width: 100%;
+                border-radius: 50%;
+            }
+            .ava-1 {
+                background-image: url("/images/organizers/fubiao.jpg");
+            }
+            .ava-2 {
+                background-image: url("/images/organizers/kamil.jpg");
+            }
+            .message, .h-container >div {
+                padding: 1em;
+            }
+            .signature {
+                font-family: 'PFMediumItalic', 'Arial Narrow', sans-serif;
+                text-align: right;
+            }
+            @media (max-width: 640px) {
+                .logo{
+                    height: auto;
+                    width: 100%;
+                }
+            }
+        </style>
+
+        <section>
+            <h1>Organizers</h1>
+            <div class="h-container">
+                <div class="flex">
+                    <div>
+                        <img class="logo" src="/images/organizers/ikff.svg">
+                    </div>
+                    <div class="h-small-container">
+                        <div class="flex">
+                            <div class="ava-1 square"></div>
+                        </div>
+                        <div class="flex-2 message">
+                            <p>
+                                Dear Sir!
+                            </p>
+                            <p>
+                                On behalf of the International Kung Fu Federation, I welcome the organizers,
+                                participants and guests of the VI International Cultural Kung Fu Festival. I’m honored
+                                to host the International Kung Fu Festival and V International Kung Fu Federation
+                                Championship having an array of martial arts competition. In the Last event, the best
+                                athletes from all around the world came together to compete, and it was simply exciting
+                                to see the games on live. It’s a festival for martial artist all over the world. I am
+                                convinced that the VI  International Cultural Kung Fu Festival will be held on high
+                                organizational level and will reveal new names of talented athletes. I wish all
+                                participants successful bouts, and the guests and spectators bright impressions from
+                                high level of athletes!
+                            </p>
+                            <p>
+                                I’m looking forward to seeing you in Moscow, Russia.
+                            </p>
+
+                            <p class="signature">
+                                Sincerely yours,<br>
+                                Fu Biao,<br>
+                                President of International Kung Fu Federation
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <div>
+                        <img class="logo" src="/images/organizers/fkfr.svg">
+                    </div>
+                    <div class="h-small-container">
+                        <div class="flex">
+                            <div class="ava-2 square"></div>
+                        </div>
+                        <div class="flex-2 message">
+                            <p>
+                                Dear World Championships Participants, Organizers and Guests,
+                            </p>
+                            <p>
+                                It is the first time for Russia to be honored to host VI International Cultural Kung Fu
+                                Festival and V International Kung Fu Federation Championship! Undoubtedly, it is a
+                                decent reward for our entire country for its efforts to develop Kung Fu both nationally
+                                and internationally. I would like to thank the International Kung Fu Federation for its
+                                successful collaboration with the Kung Fu Federation of Russia.
+                            </p>
+                            <p>
+                                The planet’s best athletes will go to the courts in Moscow very soon. Of course,
+                                Russian team will compel special attention. We always expect high results from our
+                                national team. I am sure they will manage to show spectacular demonstrations and
+                                memorable fights!
+                            </p>
+                            <p>
+                                I wish all participants of the VI International Cultural Kung Fu Festival and V
+                                International Kung Fu Federation Championship, first of all, to have self-confidence
+                                and beautiful victories, and the spectators to enjoy a real festival of Kung Fu!
+                            </p>
+                            <p class="signature">
+                                Best regards,<br>
+                                Magomedkamil Rabadanov<br>
+                                President of Kung Fu Federation of Russia
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-organizers"
+        })
+    </script>
+</dom-module>

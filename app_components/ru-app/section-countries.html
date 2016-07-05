@@ -1,0 +1,203 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/app-layout/app-box/app-box.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-countries">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            app-box {
+                --app-box-background-front-layer: {
+                    background-image: url(/images/countries/earth.jpg);
+                    background-position: bottom;
+                    padding-bottom: 10em;
+                    margin-top: -10em;
+                    height: 100%;
+                };
+            }
+            .heading{
+                padding: 2em 0 0 2em;
+                margin-bottom: 4em;
+                color: var(--paper-amber-500);
+            }
+            .country-list {
+                margin-bottom: 5em;
+                padding: 0 0 0 2em;
+            }
+            paper-card {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,fff2e0+100&0+0,1+100 */
+                background: -moz-linear-gradient(top,  rgba(30,87,153,0) 0%, rgba(255,242,224,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(30,87,153,0) 0%,rgba(255,242,224,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  rgba(30,87,153,0) 0%,rgba(255,242,224,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001e5799', endColorstr='#fff2e0',GradientType=0 ); /* IE6-9 */
+                margin: 0.5em 0.1em;
+                width: 90%;
+            }
+            .country-data {
+                @apply(--layout-horizontal);
+                @apply(--layout-justified);
+            }
+            .flag {
+                height: 6em;
+                width: 10em;
+                background-size: cover;
+                background-position: center center;
+            }
+            .accent {
+                padding: 0 1em 0.5em 0;
+                text-align: right;
+                @apply(--layout-horizontal);
+                @apply(--layout-end);
+            }
+            @media (max-width: 1800px) {
+                .h-container.country-group {
+                    display: block;
+                }
+
+            }
+            @media (max-width: 480px) {
+                .country-data {
+                    @apply(--layout-vertical);
+                }
+                .flag {
+                    margin: 1em auto;
+                }
+                .accent {
+                    display: block;
+                    padding: 0;
+                    text-align: center;
+                }
+            }
+        </style>
+
+       <section>
+           <app-box effects="parallax-background">
+               <div class="heading">
+                   <h1>Participating countries</h1>
+               </div>
+
+               <div class="h-container country-list">
+                   <div class="h-container country-group">
+                       <div class="flex">
+                           <template is="dom-repeat" items="{{pack1}}">
+                               <paper-card>
+                                   <div class="country-data">
+                                       <div class="flag" style="background-image: url(/images/countries/{{item.url}}.svg)"></div>
+                                       <div class="accent">
+                                           {{item.name}}
+                                       </div>
+                                   </div>
+                               </paper-card>
+                           </template>
+                       </div>
+
+                       <div class="flex">
+                           <template is="dom-repeat" items="{{pack2}}">
+                               <paper-card>
+                                   <div class="country-data">
+                                       <div class="flag" style="background-image: url(/images/countries/{{item.url}}.svg)"></div>
+                                       <div class="accent">
+                                           {{item.name}}
+                                       </div>
+                                   </div>
+                               </paper-card>
+                           </template>
+                       </div>
+                   </div>
+
+
+                   <div class="h-container country-group">
+                       <div class="flex">
+                           <template is="dom-repeat" items="{{pack3}}">
+                               <paper-card>
+                                   <div class="country-data">
+                                       <div class="flag" style="background-image: url(/images/countries/{{item.url}}.svg)"></div>
+                                       <div class="accent">
+                                           {{item.name}}
+                                       </div>
+                                   </div>
+                               </paper-card>
+                           </template>
+                       </div>
+
+                       <div class="flex">
+                           <template is="dom-repeat" items="{{pack4}}">
+                               <paper-card>
+                                   <div class="country-data">
+                                       <div class="flag" style="background-image: url(/images/countries/{{item.url}}.svg)"></div>
+                                       <div class="accent">
+                                           {{item.name}}
+                                       </div>
+                                   </div>
+                               </paper-card>
+                           </template>
+                       </div>
+                   </div>
+
+
+
+
+
+               </div>
+           </app-box>
+       </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-countries",
+            properties: {
+                pack1: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Armenia",url:"Armenia"},
+                            {name: "Azerbaijan",url:"Azerbaijan"},
+                            {name: "Brazil",url:"Brazil"},
+                            {name: "China",url:"China"}
+                        ]
+                    }
+                },
+                pack2: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Georgia",url:"Georgia"},
+                            {name: "India",url:"India"},
+                            {name: "Italy",url:"Italy"},
+                            {name: "Kazakhstan",url:"Kazakhstan"}
+                        ]
+                    }
+                },
+                pack3: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Malaysia",url:"Malaysia"},
+                            {name: "Pakistan",url:"Pakistan"},
+                            {name: "Russian Federation",url:"Russia"},
+                            {name: "Singapore",url:"Singapore"}
+                        ]
+                    }
+                },
+                pack4: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Turkey",url:"Turkey"},
+                            {name: "Uzbekistan",url:"Uzbekistan"},
+                            {name: "United Kingdom",url:"UK"},
+                            {name: "Ukraine",url:"Ukraine"}
+                        ]
+                    }
+                }
+            }
+        })
+    </script>
+</dom-module>

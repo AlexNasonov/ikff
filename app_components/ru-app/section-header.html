@@ -1,0 +1,54 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-header">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .app-top {
+                height: 10em;
+                background-image: url(/images/main_bg.jpg);
+                background-position: center center;
+                background-size: cover;
+                padding: 10em 0;
+                text-align: center;
+                position: relative;
+            }
+            .top-shadow {
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 1px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.4);
+            }
+            .logo {
+                height: 100%;
+                cursor: pointer;
+            }
+
+            @media (max-width: 1024px) {
+
+            }
+            @media (max-width: 400px) {
+                .logo {
+                    width: 80%;
+                }
+            }
+        </style>
+        <div class="app-top">
+            <object class="logo" type="image/svg+xml" data="/images/fest_logo_w.svg"></object>
+            <div class="top-shadow"></div>
+        </div>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-header"
+        })
+    </script>
+</dom-module>

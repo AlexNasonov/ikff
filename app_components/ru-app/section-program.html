@@ -1,0 +1,138 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/app-layout/app-box/app-box.html">
+<link rel="import" href="/bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="/bower_components/iron-icons/image-icons.html">
+
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-program">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            app-box {
+                padding: 2em;
+                --app-box-background-front-layer: {
+                    background-image: url(/images/program/bg.jpg);
+                    background-position: center;
+                    padding-bottom: 10em;
+                    margin-top: -10em;
+                    height: 100%;
+                };
+            }
+            paper-button {
+                width: 20em;
+                height: 20em;
+                background-image: url("/images/program/file.svg");
+                background-position: center;
+                background-size: cover;
+                padding: 5em;
+                margin: 0 auto;
+                color: var(--paper-orange-800);
+                @apply(--layout-vertical);
+            }
+            paper-button iron-icon{
+                width: 3em;
+                height: 3em;
+                --iron-icon-fill-color: var(--paper-red-700);
+            }
+            paper-button p {
+                text-align: center;
+            }
+            h2 {
+                text-align: center;
+            }
+            .logo {
+                height: 3em;
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            .logo-name {
+                text-align: center;
+                margin: 0.5em 0 1.5em 0;
+            }
+
+            @media (max-width: 480px) {
+                paper-button {
+                    width: 15em;
+                    height: 15em;
+                    padding: 5em 3em 0 3em;
+
+                }
+            }
+        </style>
+
+        <section>
+            <app-box effects="parallax-background">
+                <div class="h-container">
+                    <div class="flex block">
+                        <h1>Festival Program</h1>
+                        <paper-button>
+
+                            <iron-icon icon="image:picture-as-pdf"></iron-icon>
+                            <div class="accent">
+                                download festival program in PDF
+                            </div>
+                            <div>Will be available soon</div>
+                        </paper-button>
+
+                    </div>
+                    <div class="flex block">
+                        <h2>Information support</h2>
+                        <template is="dom-repeat" items="{{info}}">
+                            <div>
+                                <div class="logo" style="background-image: url(/images/program/info/{{item.url}}.png)"></div>
+                                <div class="logo-name">{{item.name}}</div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="flex block">
+                        <h2>Partners</h2>
+                        <template is="dom-repeat" items="{{partners}}">
+                            <div>
+                                <div class="logo" style="background-image: url(/images/program/partners/{{item.url}}.png)"></div>
+                                <div class="logo-name">{{item.name}}</div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </app-box>
+        </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-program",
+            properties: {
+                info: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: 'Newspaper “Sport Express”',url: 'se'},
+                            {name: 'Web-portal “SPORTBOX.RU”',url: 'sportbox'},
+                            {name: 'Radio station “Sports FM”',url: 'sports'},
+                            {name: 'Television channel “MATCH! Boets”',url: 'match'}
+                        ];
+                    }
+                },
+                partners: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: 'International exhibition center “Crocus Expo”',url: 'crocus'},
+                            {name: 'Insurance company “ITIL Armeets”',url: 'itil'},
+                            {name: 'Hotel “Aquarium”',url: 'aquarium'},
+                            {name: 'Educational center “Ideas. Technologies. Expertise. Foundation”',url: 'itef_en'}
+                        ];
+                    }
+                }
+            }
+        })
+    </script>
+</dom-module>

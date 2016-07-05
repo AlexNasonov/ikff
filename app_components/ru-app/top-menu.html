@@ -1,0 +1,134 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="top-menu">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .logo {
+                text-align: right;
+                padding: 2em;
+            }
+            .logo-image {
+                width: 250px;
+            }
+            .menu-content {
+                padding: 0 2em;
+            }
+            .menu-group {
+                margin: 1.5em 0;
+            }
+            .heading {
+                font-family: 'PFMediumItalic', 'Arial Narrow', monospace;
+                text-transform: uppercase;
+                font-size: 2em;
+                display: block;
+                color: var(--paper-orange-800);
+            }
+            paper-button {
+
+            }
+
+            @media (max-width: 1024px) {
+
+            }
+            @media (max-width: 400px) {
+                .logo-image {
+                    width: 100%;
+                }
+            }
+        </style>
+        <div class="logo">
+            <object class="logo-image" type="image/svg+xml" data="/images/fest_logo_c.svg"></object>
+        </div>
+
+        <div class="menu-content">
+            <div class="menu-group">
+                <span class="heading">Общая информация</span>
+                <template is="dom-repeat" items="{{menuAbout}}">
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">Фестиваль</span>
+                <template is="dom-repeat" items="{{menuFestival}}">
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">Проезд и проживание</span>
+                <template is="dom-repeat" items="{{menuTravel}}">
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
+                </template>
+            </div>
+
+            <div class="menu-group">
+                <span class="heading">Другое</span>
+                <template is="dom-repeat" items="{{menuMore}}">
+                    <paper-button data-url$="{{item.url}}" on-click="_goTo">{{item.name}}</paper-button>
+                </template>
+            </div>
+        </div>
+
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "top-menu",
+            properties: {
+                menuAbout: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "О Фустивале", url: "/ru#sectionAbout"},
+                            {name: "Организаторы", url: "/ru#sectionOrganizers"},
+                            {name: "Страны-участники", url: "/ru#sectionCountries"},
+                            {name: "Информационная поддержка", url: "/ru#sectionProgram"},
+                            {name: "Партнеры", url: "/ru#sectionProgram"}
+                        ]
+                    }
+                },
+                menuFestival: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "События", url: "/ru#sectionEvents"},
+                            {name: "Площадка", url: "/ru#sectionGround"},
+                            {name: "Программа", url: "/ru#sectionProgram"}
+                        ]
+                    }
+                },
+                menuTravel: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "Как добраться?", url: "/ru#sectionMap"},
+                            {name: "Где жить?", url: "/ru#sectionMap"}
+                        ]
+                    }
+                },
+                menuMore: {
+                    type: Array,
+                    value: function () {
+                        return [
+                            {name: "IKFF 2015", url: "/gallery"},
+                            {name: "Контакты", url: "/ru#sectionFooter"}
+                        ]
+                    }
+                }
+            },
+            _goTo: function (e) {
+                var url = e.target.getAttribute('data-url');
+                window.location.replace(url);
+            }
+        })
+    </script>
+</dom-module>

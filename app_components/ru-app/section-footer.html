@@ -1,0 +1,54 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-footer">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .app-footer {
+                text-align: right;
+                padding: 0.5em 2em;
+                background-color: var(--paper-red-700);
+                color: #ffffff;
+            }
+            .app-footer .logo{
+                height: 4em;
+            }
+            .app-footer a{
+                color: inherit;
+            }
+            @media (max-width: 1024px) {
+
+            }
+        </style>
+
+
+        <div class="app-footer h-container">
+            <div class="flex">
+                <p>All organization questions, aspects with receipt of russian visa and living:
+                    <br>Andrey Demin
+                    <br><a href="mailto:demin@kungfu-russia.ru">demin@kungfu-russia.ru</a></p>
+
+            </div>
+            <div class="flex">
+                <p>Sponsorship and informational support:
+                    <br>Andrey Yanichev
+                    <br><a href="mailto:yanichev@kungfu-russia.ru">yanichev@kungfu-russia.ru</a></p>
+
+            </div>
+            <div class="flex">
+                <img class="logo" src="/images/fest_logo_w_short.svg">
+            </div>
+
+        </div>
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-footer"
+        })
+    </script>
+</dom-module>

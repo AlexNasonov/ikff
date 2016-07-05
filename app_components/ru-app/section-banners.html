@@ -1,0 +1,73 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="/app_components/shared-styles/shared-styles.html">
+
+<dom-module id="section-banners">
+    <template>
+        <style include="shared-styles iron-flex iron-flex-alignment iron-flex-factors">
+            .banner {
+                cursor: pointer;
+                height: 15em;
+                background-position: center;
+                background-size: cover;
+            }
+
+            .banner-text {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#320a32+0,000000+100&1+0,0+100 */
+                background: -moz-linear-gradient(left,  rgba(50,10,50,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(50,10,50,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(50,10,50,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#320a32', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+                width: 60%;
+                color: #ffffff;
+                height: 100%;
+            }
+            .accent {
+                padding: 1em;
+                margin: 0;
+                text-align: left;
+            }
+
+            @media (max-width: 1024px) {
+
+            }
+        </style>
+        <section class="h-container">
+
+                <div id="galleryBanner" class="banner flex"
+                     style="background-image: url(/images/banners/ikff2015.jpg)">
+                    <div class="banner-text">
+                        <p class="accent">Take a look at 2015 International Kung-Fu Festival photo gallery</p>
+                    </div>
+                </div>
+
+
+
+                <div id="tourBanner" class="banner flex"
+                     style="background-image: url(/images/banners/moscow.jpg)">
+                    <div class="banner-text">
+                        <p class="accent">Experience Moscow with professional guides on our escourted tours</p>
+                    </div>
+                </div>
+
+        </section>
+
+    </template>
+
+    <script>
+        'use strict';
+        Polymer({
+            is: "section-banners",
+            ready: function () {
+                this.$.galleryBanner.addEventListener('click', function () {
+                    window.location.replace('/gallery');
+                });
+                this.$.tourBanner.addEventListener('click', function () {
+                    window.location.replace('/tours');
+                })
+            }
+        })
+    </script>
+</dom-module>
